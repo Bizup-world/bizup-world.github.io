@@ -1,0 +1,70 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f4f1de;
+    color: #e07a5f;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 20px; /* Larger font size */
+    font-weight: bold; /* Bold font */
+}
+
+h1, h2 {
+    color: #3d405b;
+}
+
+button {
+    background-color: #a38b48;
+    color: #f4f1de;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3d405b;
+}
+
+.correct {
+    background-color: #2a9d8f;
+}
+
+.incorrect {
+    background-color: #e76f51;
+}
+
+#result-page {
+    text-align: center;
+}
+
+#winner-variant, #losing-variant {
+    color: #2a9d8f;
+
+/* Mobile adaptations */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+
+    h1, h2 {
+        font-size: 1.5em; /* Adjust heading sizes for mobile */
+    }
+
+    button {
+        padding: 8px 16px; /* Smaller buttons for mobile */
+        font-size: 14px; /* Smaller font size for buttons */
+    }
+
+    #result-page, #winner-variant, #losing-variant {
+        padding: 10px; /* Padding for better spacing on mobile */
+        text-align: left; /* Align text to left for better readability */
+    }
+}

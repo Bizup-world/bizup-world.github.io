@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>बीजप मुकाबला </title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="utf-8">
+</head>
+<body>
+    <!-- Page 1: Welcome Screen -->
+    <div id="welcome-screen">
+        <h1>बीजप मुकाबला</h1>
+        <h2>3 मे से 2 सही जवाब दें .</h2>
+      <h3><span id="100">100 <span/>रुपए नकद राशि जीते..</h3>
+        <!-- Illustration of 1GB mobile recharge free as winning prize -->
+        <button onclick="startQuiz()">शुरु करें </button>
+    </div>
+
+    <!-- Page 2: Quiz 1 -->
+    <div id="quiz-1" style="display: none;">
+        <h2>पहला सवाल: बीजप पे किस किस आर्डर पे सि ओ डी मिलती है ?</h2>
+        <!-- Options -->
+        <ol type="1">
+            <li><button id="quiz1-option1" onclick="checkAnswer('quiz1', 'option1')">सारे आर्डर पर</button></li>
+            <li><button id="quiz1-option2" onclick="checkAnswer('quiz1', 'option2')">10,000 से उपर के आर्डर पर </button></li>
+            <li><button id="quiz1-option3" onclick="checkAnswer('quiz1', 'option3')">सिर्फ पहले आर्डर पर </button></li>
+            <li><button id="quiz1-option4" onclick="checkAnswer('quiz1', 'option4')">किसी भी आर्डर पर नहीं मिलती</button></li>
+        </ol>
+        <!-- Message -->
+        <p id="message-quiz1"></p>
+        <!-- Next Quiz Button -->
+        <button onclick="nextQuiz('quiz-1', 'quiz-2')">अगले सवाल पे जायेँ </button>
+    </div>
+
+    <!-- Page 3: Quiz 2 -->
+    <div id="quiz-2" style="display: none;">
+        <h2>दूसरा सवाल : बीजप आपको फ्रॉड से कैसे बचाता है?</h2>
+        <!-- Options -->
+        <ol type="1">
+            <li><button id="quiz2-option1" onclick="checkAnswer('quiz2', 'option1')">सारे सैलर्स को उनकी दूकान पे जाके वेरीफाई करके </button></li>
+            <li><button id="quiz2-option2" onclick="checkAnswer('quiz2', 'option2')">माल पैक होने से पहले आपको वीडियो कॉल पर चैक कराके </button></li>
+            <li><button id="quiz2-option3" onclick="checkAnswer('quiz2', 'option3')">गलत माल आने पर डबल पैसे वापस करके </button></li>
+            <li><button id="quiz2-option4" onclick="checkAnswer('quiz2', 'option4')">ये तीनो सर्विस साथ मे देके  </button></li>
+        </ol>
+        <!-- Message -->
+        <p id="message-quiz2"></p>
+        <!-- Next Quiz Button -->
+        <button onclick="nextQuiz('quiz-2', 'quiz-3')">अगला सवाल </button>
+    </div>
+
+    <!-- Page 4: Quiz 3 -->
+    <div id="quiz-3" style="display: none;">
+        <h2>तीसरा सवाल: आप बीजप से कैसे आर्डर लगा सकते है?</h2>
+        <!-- Options -->
+        <ol type="1">
+            <li><button id="quiz3-option1" onclick="checkAnswer('quiz3', 'option1')">बीजप सैलर से माल खरीदके आपको भेजता है</button></li>
+            <li><button id="quiz3-option2" onclick="checkAnswer('quiz3', 'option2')">बीजप ऐप्प पर सैलर का क्यू आर स्कैन करके </button></li>
+            <li><button id="quiz3-option3" onclick="checkAnswer('quiz3', 'option3')">सैलर से डायरेक्ट बात करके बिना किसी कमीशन के </button></li>
+        </ol>
+        <!-- Message -->
+        <p id="message-quiz3"></p>
+        <!-- Result Page Button -->
+        <button onclick="showResult()">अपना परिणाम जाने</button>
+    </div>
+
+    <!-- Page 5: Result Page -->
+    <div id="result-page" style="display: none;">
+        <!-- Winner Variant -->
+        <div id="winner-variant" style="display: none;">
+            <h2>बधाई हो !! आपने 100 रुपए पेटीएम पर जित्ते है!</h2>
+        </div>
+        <!-- Losing Variant -->
+        <div id="losing-variant" style="display: none;">
+            <h2>माफ़ कीजिएगा ! आपने गलत जवाब दिए है </h2>
+            <!-- Sad Emoji -->
+            <p>आप अगले हफ्ते ऐप्प पे फिरसे खेल सकते हैँ .</p>
+            <button>ऐप्प डालें </button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
