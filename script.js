@@ -76,3 +76,26 @@ function uploadPhoto() {
         uploadMessage.innerText = 'Photo upload karne ke liye Dhanyewad Apko Whatsapp pe 2 din mai recharge code mil jayega';
     }
 }
+
+function validateMobileNumber() {
+    let mobileNumber = document.getElementById('mobile-number').value;
+    let submitButton = document.getElementById('submit-number');
+    if (mobileNumber.length === 10 && !isNaN(mobileNumber)) {
+        submitButton.disabled = false;
+    } else {
+        submitButton.disabled = true;
+    }
+}
+
+function submitMobileNumber() {
+    let mobileNumber = document.getElementById('mobile-number').value;
+    let submissionMessage = document.getElementById('submission-message');
+    let submitButton = document.getElementById('submit-number');
+
+    // Disable the input and button to prevent multiple submissions
+    document.getElementById('mobile-number').disabled = true;
+    submitButton.disabled = true;
+
+    // Display a thank you message or similar
+    submissionMessage.innerText = 'धन्यवाद! आपका मोबाइल नंबर ' + mobileNumber + ' प्राप्त हो गया है। आपका पुरस्कार जल्द ही भेजा जाएगा।';
+}
