@@ -88,14 +88,30 @@ function validateMobileNumber() {
 }
 
 function submitMobileNumber() {
-    let mobileNumber = document.getElementById('mobile-number').value;
-    let submissionMessage = document.getElementById('submission-message');
-    let submitButton = document.getElementById('submit-number');
-
+    let mobileNumber = document.getElementById("mobile-number").value;
+    let submissionMessage = document.getElementById("submission-message");
+    let submitButton = document.getElementById("submit-number");
+  
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://api.bizup.app/events", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(
+      JSON.stringify({
+        user_info: {
+          mobileNumber: mobileNumber,
+        },
+        event_name: "bizup-quiz",
+        time_stamp: new Date().getTime().toString(),
+      })
+    );
+  
     // Disable the input and button to prevent multiple submissions
-    document.getElementById('mobile-number').disabled = true;
+    document.getElementById("mobile-number").disabled = true;
     submitButton.disabled = true;
-
+  
     // Display a thank you message or similar
-    submissionMessage.innerText = 'धन्यवाद! आपका मोबाइल नंबर ' + mobileNumber + ' प्राप्त हो गया है। आपका पुरस्कार जल्द ही भेजा जाएगा।';
-}
+    submissionMessage.innerText =
+      "धन्यवाद! आपका मोबाइल नंबर " +
+      mobileNumber +
+      " प्राप्त हो गया है। आपका पुरस्कार जल्द ही भेजा जाएगा।";
+  }
