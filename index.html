@@ -11,7 +11,7 @@
     <div id="welcome-screen">
         <h1>बीजप मुकाबला</h1>
         <h2>3 मे से 2 सही जवाब दें|</h2>
-      <h3>50 रुपए नकद राशि जीते|</h3>
+      <h3>200 रुपए तक नकद राशि जीते|</h3>
         <!-- Illustration of 1GB mobile recharge free as winning prize -->
         <button onclick="startQuiz()">मुकाबला शुरु करें</button>
     </div>
@@ -67,7 +67,10 @@
         <!-- Winner Variant -->
         <div id="winner-variant" style="display: none;">
             <h2>बधाई हो| आपने 50 रुपए पेटीएम पर जित्ते है|</h2>
-            <p>आपके पैसे आपको 1 से 2 दिन मे आपको भेज दिए जायेंगे|</p>
+            <p>अपना 10 अंको का पेटीम नंबर डालें और पुरस्कार प्राप्त करें:</p>
+    <input type="text" id="mobile-number" placeholder="सिर्फ 10 अंको नंबर डालें" oninput="validateMobileNumber()">
+    <button id="submit-number" onclick="submitMobileNumber()" disabled>पुरस्कार प्राप्त करें</button>
+    <p id="submission-message"></p>
         </div>
         <!-- Losing Variant -->
         <div id="losing-variant" style="display: none;">
