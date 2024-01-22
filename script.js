@@ -14,7 +14,7 @@ function checkAnswer(quiz, option) {
     if (quiz === 'quiz1') {
         correctOption = 'option1';
     } else if (quiz === 'quiz2') {
-        correctOption = 'option4';
+        correctOption = 'option1';
     } else if (quiz === 'quiz3') {
         correctOption = 'option3';
     }
@@ -25,12 +25,12 @@ function checkAnswer(quiz, option) {
     if(selectedOption && correctAnswer && message) {
         if (option === correctOption) {
             selectedOption.classList.add('correct');
-            message.innerText = 'मुबारक हो! आपने सही जवाब चुना है.';
+            message.innerText = 'मुबारक हो! आपने सही जवाब चुना है|';
             correctAnswers++;
         } else {
             selectedOption.classList.add('incorrect');
             correctAnswer.classList.add('correct');
-            message.innerText = 'माफ़ कीजिएगा! आपने गलत जवाब चुना है . सही जवाब हरे रंग मे है';
+            message.innerText = 'माफ़ कीजिएगा! आपने गलत जवाब चुना है| सही जवाब हरे रंग मे है|';
         }
         // Disable all options after one is selected
         for (let i = 1; i <= 4; i++) {
